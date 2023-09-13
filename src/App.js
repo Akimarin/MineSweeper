@@ -39,7 +39,7 @@ function App() {
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <BrowserRouter basename="/MineSweeper">
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
                   <Route key={index} element={AppRoute.element} path={AppRoute.path} />
