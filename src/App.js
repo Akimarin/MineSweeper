@@ -18,7 +18,7 @@ function App() {
 
   const AppRoutes = [
     {
-      path: "/",
+      path: "/MineSweeper",
       element: <MainMenu gameData={gameData} setGameData={setGameData} />
     },
     {
