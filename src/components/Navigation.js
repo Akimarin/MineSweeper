@@ -11,7 +11,7 @@ export function Navigation() {
                 <Toolbar>
                     <Typography
                         component="a"
-                        href="MineSweeper/"
+                        href="/"
                         variant="h5"
                         sx={{
                         display: { xs: 'none', md: 'flex' },

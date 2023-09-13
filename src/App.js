@@ -18,7 +18,7 @@ function App() {
 
   const AppRoutes = [
     {
-      path: "",
+      path: "/",
       element: <MainMenu gameData={gameData} setGameData={setGameData} />
     },
     {
@@ -30,7 +30,7 @@ function App() {
       element: <Leaderboard />
     },
     {
-      path: "Rules",
+      path: "/Rules",
       element: <Rules />
     },
   ];
