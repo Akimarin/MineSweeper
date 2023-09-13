@@ -18,19 +18,19 @@ function App() {
 
   const AppRoutes = [
     {
-      path: "/MineSweeper",
+      path: "/",
       element: <MainMenu gameData={gameData} setGameData={setGameData} />
     },
     {
-      path: "MineSweeper/Game",
+      path: "/Game",
       element: <Game gameData={gameData} setGameData={setGameData} />
     },
     {
-      path: "MineSweeper/Leaders",
+      path: "/Leaders",
       element: <Leaderboard />
     },
     {
-      path: "MineSweeper/Rules",
+      path: "Rules",
       element: <Rules />
     },
   ];
@@ -39,7 +39,7 @@ function App() {
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <BrowserRouter basename="/MineSweeper">
+          <BrowserRouter basename={"/MineSweeper"}>
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
                   <Route key={index} element={AppRoute.element} path={AppRoute.path} />
