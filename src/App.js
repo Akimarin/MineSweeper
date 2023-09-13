@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ThemeProvider} from '@mui/material/styles';
 import { Container} from '@mui/material';
 import { Navigation } from './components/Navigation';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, HashRouter } from 'react-router-dom';
 //import AppRoutes from './AppRoutes';
 import { newTheme } from './components/data/ThemeSettings';
 
@@ -39,13 +39,13 @@ function App() {
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <BrowserRouter>
+          <HashRouter>
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
                   <Route key={index} element={AppRoute.element} path={AppRoute.path} />
               ))}
               </Routes>
-            </BrowserRouter>
+            </HashRouter>
       </ThemeProvider>
     </Container>
   );
