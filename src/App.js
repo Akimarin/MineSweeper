@@ -22,15 +22,15 @@ function App() {
       element: <MainMenu gameData={gameData} setGameData={setGameData} />
     },
     {
-      path: "/Game",
+      path: "MineSweeper/Game",
       element: <Game gameData={gameData} setGameData={setGameData} />
     },
     {
-      path: "/Leaders",
+      path: "MineSweeper/Leaders",
       element: <Leaderboard />
     },
     {
-      path: "/Rules",
+      path: "MineSweeper/Rules",
       element: <Rules />
     },
   ];
