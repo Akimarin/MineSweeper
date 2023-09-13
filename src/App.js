@@ -39,13 +39,13 @@ function App() {
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <BrowserRouter basename={"/"}>
+          <HashRouter basename={process.env.PUBLIC_URL}>
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
                   <Route key={index} element={AppRoute.element} path={AppRoute.path} />
               ))}
               </Routes>
-            </BrowserRouter>
+            </HashRouter>
       </ThemeProvider>
     </Container>
   );
