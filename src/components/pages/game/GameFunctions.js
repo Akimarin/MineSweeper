@@ -8,7 +8,7 @@ import {produce} from "immer"
         emptyCells.map (emptyCell => {
             if((emptyCell.isEmpty || !emptyCell.isMine) && !emptyCell.isShow & !emptyCell.isFlag){
                 Object.assign( openedCells[emptyCell.x][emptyCell.y], {isShow: true});
-            
+            //если открываются не все проверьте ссылку в README
                 if(emptyCell.isEmpty){
                     openCell(openedCells, height, width, emptyCell.x, emptyCell.y);
                 }}
