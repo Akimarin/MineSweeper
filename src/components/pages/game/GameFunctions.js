@@ -3,15 +3,16 @@ import { findCell } from './CreateFunctions';
 import {produce} from "immer"
 
     const openCell = (data, height, width, i, j) => {
-        let emptyCells = findCell(data, height, width, i, j);
         let openedCells = data;
-        emptyCells.map (cell => {
-            if((cell.isEmpty || !cell.isMine) && !cell.isShow & !cell.isFlag)
-                openedCells[cell.x][cell.y].isShow = true;
-            if(cell.isEmpty)
-            openCell(data, i, j);
+        let emptyCells = findCell(openedCells, height, width, i, j);
+        emptyCells.map (emptyCell => {
+            if((emptyCell.isEmpty || !emptyCell.isMine) && !emptyCell.isShow & !emptyCell.isFlag){
+                Object.assign( openedCells[emptyCell.x][emptyCell.y], {isShow: true});
+            
+                if(emptyCell.isEmpty){
+                    openCell(openedCells, height, width, emptyCell.x, emptyCell.y);
+                }}
         })
-
         return openedCells;
     }
 
