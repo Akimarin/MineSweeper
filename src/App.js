@@ -5,7 +5,6 @@ import { Navigation } from './components/Navigation';
 import { Routes, Route, BrowserRouter, HashRouter } from 'react-router-dom';
 //import AppRoutes from './AppRoutes';
 import { newTheme } from './components/data/ThemeSettings';
-
 import { MainMenu } from "./components/pages/main/MainMenu";
 import { Game } from "./components/pages/game/Game";
 import { DifficultyLevels } from './components/data/DifficultyLevels';
@@ -33,20 +32,20 @@ function App() {
       path: "/Rules",
       element: <Rules />
     },
+
   ];
 
   return (
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <HashRouter basename="/MineSweeper">
+          <BrowserRouter basename="/MineSweeper">
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
                   <Route key={index} element={AppRoute.element} path={AppRoute.path} />
               ))}
               </Routes>
-
-            </HashRouter>
+            </BrowserRouter>
       </ThemeProvider>
     </Container>
   );
