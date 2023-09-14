@@ -45,6 +45,7 @@ function App() {
                   <Route key={index} element={AppRoute.element} path={pathApp+AppRoute.path} />
               ))}
               </Routes>
+
             </BrowserRouter>
       </ThemeProvider>
     </Container>
