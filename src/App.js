@@ -34,19 +34,19 @@ function App() {
       element: <Rules />
     },
   ];
-  const pathApp = process.env.REACT_APP_FOR_PATH;
+
   return (
     <Container maxWidth="false">
       <ThemeProvider theme={newTheme}>
           <Navigation/>
-          <BrowserRouter basename={process.env.REACT_APP_FOR_PATH}>
+          <HashRouter basename={"/MineSweeper"}>
               <Routes>
                 {AppRoutes.map((AppRoute, index) => (
-                  <Route key={index} element={AppRoute.element} path={pathApp+AppRoute.path} />
+                  <Route key={index} element={AppRoute.element} path={AppRoute.path} />
               ))}
               </Routes>
 
-            </BrowserRouter>
+            </HashRouter>
       </ThemeProvider>
     </Container>
   );
